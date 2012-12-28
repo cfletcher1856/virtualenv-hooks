@@ -1,0 +1,8 @@
+#!/bin/bash
+# This hook is run after every virtualenv is activated.
+
+proj_name=$(echo $VIRTUAL_ENV|awk -F'/' '{print $NF}')
+cd $HOME/Projects/$proj_name
+
+rm -f **/*.pyc
+rm -f **/*.orig
